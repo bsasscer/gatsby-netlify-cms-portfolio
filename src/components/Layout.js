@@ -14,7 +14,7 @@ const TemplateWrapper = ({ children }) => {
                 <title>{title}</title>
                 <meta name="description" content={description} />
 
-                <link rel="shortcut icon" href="favicon.ico?v=3" />
+                <link rel="shortcut icon" href="favicon.ico" />
                 <meta name="theme-color" content="#fff" />
 
                 <meta property="og:type" content="business.business" />
