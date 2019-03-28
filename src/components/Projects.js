@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 
-class BlogRoll extends React.Component {
+class Projects extends React.Component {
     render() {
         const { data } = this.props;
         const { edges: posts } = data.allMarkdownRemark;
@@ -24,17 +24,6 @@ class BlogRoll extends React.Component {
                                         {post.frontmatter.date}
                                     </span>
                                 </p>
-                                <p>
-                                    {post.excerpt}
-                                    <br />
-                                    <br />
-                                    <Link
-                                        className="button"
-                                        to={post.fields.slug}
-                                    >
-                                        Keep Reading →
-                                    </Link>
-                                </p>
                             </article>
                         </div>
                     ))}
@@ -43,7 +32,7 @@ class BlogRoll extends React.Component {
     }
 }
 
-BlogRoll.propTypes = {
+Projects.propTypes = {
     data: PropTypes.shape({
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.array
@@ -54,16 +43,15 @@ BlogRoll.propTypes = {
 export default () => (
     <StaticQuery
         query={graphql`
-            query BlogRollQuery {
+            query ProjectsQuery {
                 allMarkdownRemark(
                     sort: { order: DESC, fields: [frontmatter___date] }
                     filter: {
-                        frontmatter: { templateKey: { eq: "blog-post" } }
+                        frontmatter: { templateKey: { eq: "project-post" } }
                     }
                 ) {
                     edges {
                         node {
-                            excerpt(pruneLength: 400)
                             id
                             fields {
                                 slug
@@ -71,13 +59,13 @@ export default () => (
                             frontmatter {
                                 title
                                 templateKey
-                                date(formatString: "MMMM DD, YYYY")
+                                date(formatString: "MMMM YYYY")
                             }
                         }
                     }
                 }
             }
         `}
-        render={(data, count) => <BlogRoll data={data} count={count} />}
+        render={(data, count) => <Projects data={data} count={count} />}
     />
 );
