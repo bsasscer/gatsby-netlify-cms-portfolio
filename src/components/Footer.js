@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import logo from '../img/logo.svg';
-import facebook from '../img/social/facebook.svg';
-import instagram from '../img/social/instagram.svg';
-import twitter from '../img/social/twitter.svg';
-import vimeo from '../img/social/vimeo.svg';
+import coffee from '../img/social/coffee.svg';
+import dribbble from '../img/social/dribbble.svg';
+import envelope from '../img/social/envelope-o.svg';
+import github from '../img/github.svg';
 
 const Footer = class extends React.Component {
     render() {
@@ -92,23 +92,45 @@ const Footer = class extends React.Component {
                                 </section>
                             </div>
                             <div className="column is-4 social">
-                                <a title="twitter" href="https://twitter.com">
-                                    <img
-                                        className="fas fa-lg"
-                                        src={twitter}
-                                        alt="Twitter"
-                                        style={{ width: '1em', height: '1em' }}
-                                    />
+                                <a
+                                    className="navbar-item"
+                                    href="https://github.com/bsasscer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <span className="icon">
+                                        <img src={github} alt="Github" />
+                                    </span>
                                 </a>
                                 <a
-                                    title="instagram"
-                                    href="https://instagram.com"
+                                    className="navbar-item"
+                                    href="https://github.com/bsasscer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    <img
-                                        src={instagram}
-                                        alt="Instagram"
-                                        style={{ width: '1em', height: '1em' }}
-                                    />
+                                    <span className="icon">
+                                        <img src={coffee} alt="Kofi" />
+                                    </span>
+                                </a>
+                                <a
+                                    className="navbar-item"
+                                    href="https://github.com/bsasscer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <span className="icon">
+                                        <img src={dribbble} alt="Dribbble" />
+                                    </span>
+                                </a>
+                                <a
+                                    className="navbar-item"
+                                    href="https://github.com/bsasscer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <span className="icon">
+                                        <img src={envelope} alt="Email" />
+                                    </span>
                                 </a>
                             </div>
                         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
 const Navbar = class extends React.Component {
@@ -86,16 +85,6 @@ const Navbar = class extends React.Component {
                             >
                                 Form Examples
                             </Link>
-                            <a
-                                className="navbar-item"
-                                href="https://github.com/bsasscer"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <span className="icon">
-                                    <img src={github} alt="Github" />
-                                </span>
-                            </a>
                         </div>
                     </div>
                 </div>

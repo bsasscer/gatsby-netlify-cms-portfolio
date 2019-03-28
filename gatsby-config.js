@@ -2,7 +2,7 @@ var proxy = require('http-proxy-middleware');
 
 module.exports = {
     siteMetadata: {
-        title: 'Bianca Sasscer',
+        title: 'Bianca Sasscer | Web designer and developer for hire',
         description: 'Designer and Web Developer for hire.'
     },
     plugins: [
