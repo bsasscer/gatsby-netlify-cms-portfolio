@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from '../../components/Layout';
-import BlogRoll from '../../components/BlogRoll';
+import Layout from '../components/Layout';
+import Projects from '../components/Projects';
 
-export default class BlogIndexPage extends React.Component {
+export default class ProjectsIndexPage extends React.Component {
     render() {
         return (
             <Layout>
@@ -26,11 +26,11 @@ export default class BlogIndexPage extends React.Component {
                                         padding: '1rem'
                                     }}
                                 >
-                                    Latest Stories
+                                    Latest
                                 </h1>
                             </div>
                         </div>
-                        <BlogRoll />
+                        <Projects />
                     </div>
                 </section>
             </Layout>
