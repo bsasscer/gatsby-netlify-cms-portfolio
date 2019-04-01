@@ -1,17 +1,48 @@
-@import "~bulma/sass/utilities/initial-variables"
+@import url("https://use.typekit.net/pzt3kof.css");
+
 
 // Config vars
-// Logo brand colors: #3333CC | #66FFCC
-$govenor-bay: #3333CC
-$aquamarine: #66FFCC
+// Logo brand colors: dark-blue | zumthor
+$dark-blue: #0032d1
+$zumthor: #e7eeff
 
-$primary-color: $govenor-bay
-$accent-color: $aquamarine
+$primary-color: $dark-blue
+$accent-color: $zumthor
 $body-color: #444
 $black: #2b2523
 
-.navbar .navbar-menu
-  box-shadow: none !important
+body 
+  background: $zumthor
+
+.main-header,
+.nav
+  display: flex
+  font-family: benton-sans, sans-serif
+  flex-direction: column
+
+.main-header
+  margin: 0 auto   
+  padding-top: 2em
+  width: 90%
+
+.site-logo
+  align-self: center
+  width: 110px
+
+ul.nav
+  padding-left: 0
+
+.nav a
+  color: $primary-color 
+  display: block
+  font-size: 1.125em
+  text-align: center
+  padding: .4em
+  border-bottom: 1px solid $primary-color
+  text-decoration: none
+
+.nav a:hover
+  color: #0b0b0b
 
 .content .taglist
   list-style: none
@@ -71,35 +102,15 @@ $black: #2b2523
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item .icon
-  color: $primary-color
-// Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
   height: 1.5rem
   fill: $primary-color
-.navbar-brand .navbar-item.logo
-  padding: 0 1rem
+
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
 
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $accent-color
-$menu-item-active-background-color:	$accent-color
-$menu-list-border-left: 1px solid $accent-color
-$menu-label-color: $white-ter
-
-
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
 .social
   padding: 2em
 .social a
@@ -110,4 +121,30 @@ $menu-label-color: $white-ter
     vertical-align: middle
     display: inline
 
-@import "~bulma"
+
+@media (min-width: 769px)
+  .main-header
+    justify-content: flex-end
+  .site-logo
+    align-self: flex-start
+    width: 110px
+  .nav
+    align-items: flex-end
+    flex-direction: row
+    margin-top: 3em
+    justify-content: space-between
+  .nav a
+    border-bottom-color: transparent
+
+@media (min-width: 1025px)
+  .main-header
+    flex-direction: row
+    justify-content: space-between
+  .site-logo
+    width: 110px
+  .nav
+    align-self: center
+    margin-top: 0
+  .nav li
+    margin-right: .65em
+    margin-left: .65em
