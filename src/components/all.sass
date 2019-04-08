@@ -25,6 +25,7 @@ body
   height: 100%
   font-family: proxima-nova, sans-serif
   margin: 0
+  overflow: hidden
   width: 100%
 
 ul
@@ -50,11 +51,13 @@ aside
 
 .sidebar_slim,
 .nav
-  border-right: 1px solid $zumthor
+  border-right: 1px solid rgba(48, 48, 47, .5)
 
 main
   grid-column-start: 3
   padding: 5rem
+  overflow-y: scroll
+  height: 100vh
 
 .home
   grid-row-start: 2
@@ -109,6 +112,9 @@ nav .option-number
   grid-gap: 10px
   grid-template-columns: 250px 250px 250px
 
+.projects-list a 
+  text-decoration: none
+
 .ticket
   background: #fff
   border-top: 10px solid $dark-blue
@@ -116,15 +122,14 @@ nav .option-number
   flex-direction: column
   padding: 1rem
 
-.ticket:hover
-  box-shadow: 4px 4px 0px 0px rgba(51, 51, 50, 1)
-
+.ticket:hover .preview-img
+  display: block
+  
 .ticket-top
   display: flex
   justify-content: space-between
 
 .ticket-top .title
-  text-decoration: none
   text-transform: uppercase
 
 .date

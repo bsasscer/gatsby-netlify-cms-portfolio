@@ -11,17 +11,24 @@ class Projects extends React.Component {
             <div className="projects-list">
                 {posts &&
                     posts.map(({ node: post }) => (
-                        <div className="ticket" key={post.id}>
+                        <Link
+                            to={post.fields.slug}
+                            className="ticket"
+                            key={post.id}
+                        >
                             <div className="ticket-top">
-                                <Link to={post.fields.slug} className="title">
+                                <div className="title">
                                     {post.frontmatter.title}
-                                </Link>
+                                </div>
                                 <span className="arrow">→</span>
+                            </div>
+                            <div className="ticket-middle">
+                                <p className="excerpt">{post.excerpt}</p>
                             </div>
                             <div className="ticket-bottom">
                                 <p className="date">{post.frontmatter.date}</p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
             </div>
         );
@@ -48,6 +55,7 @@ export default () => (
                 ) {
                     edges {
                         node {
+                            excerpt(pruneLength: 200)
                             id
                             fields {
                                 slug
