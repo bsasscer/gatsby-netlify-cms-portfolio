@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import logo from '../img/logo.svg';
 
 const Navbar = class extends React.Component {
     constructor(props) {
@@ -13,17 +12,34 @@ const Navbar = class extends React.Component {
 
     render() {
         return (
-            <header className="main-header">
-                <Link to="/" className="site-logo" title="Logo">
-                    <img src={logo} alt="Bianca Sasscer" />
-                </Link>
-                <ul className="nav">
-                    <Link to="/projects">Projects</Link>
-                    <Link to="/blog">Posts</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="#">Contact</Link>
+            <nav className="nav">
+                <ul>
+                    <li>
+                        <Link to="/projects">
+                            <span className="option-number">01</span>
+                            <h3>Projects</h3>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/blog">
+                            <span className="option-number">02</span>
+                            <h3>Posts</h3>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about">
+                            <span className="option-number">03</span>
+                            <h3>About</h3>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">
+                            <span className="option-number">04</span>
+                            <h3>Contact</h3>
+                        </Link>
+                    </li>
                 </ul>
-            </header>
+            </nav>
         );
     }
 };

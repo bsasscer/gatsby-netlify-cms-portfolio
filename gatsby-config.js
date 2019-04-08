@@ -2,7 +2,8 @@ var proxy = require('http-proxy-middleware');
 
 module.exports = {
     siteMetadata: {
-        title: 'Bianca Sasscer | Web designer and developer for hire',
+        title:
+            'Bianca Sasscer | Bianca Sasscer is a designer and front end developer in San Diego, CA',
         description: 'Designer and Web Developer for hire.'
     },
     plugins: [

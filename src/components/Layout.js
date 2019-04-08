@@ -1,14 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
     const { title, description } = useSiteMetadata();
     return (
-        <div>
+        <div className="container">
             <Helmet>
                 <html lang="en" />
                 <title>{title}</title>
@@ -112,9 +111,8 @@ const TemplateWrapper = ({ children }) => {
                 <meta property="og:url" content="/" />
                 <meta property="og:image" content="/img/og-image.jpg" />
             </Helmet>
-            <Navbar />
-            <div>{children}</div>
-            <Footer />
+            <Sidebar />
+            <main className="main">{children}</main>
         </div>
     );
 };

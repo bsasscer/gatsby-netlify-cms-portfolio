@@ -8,23 +8,19 @@ class Projects extends React.Component {
         const { edges: posts } = data.allMarkdownRemark;
 
         return (
-            <div className="columns is-multiline">
+            <div className="projects-list">
                 {posts &&
                     posts.map(({ node: post }) => (
-                        <div className="is-parent column is-6" key={post.id}>
-                            <article className="tile is-child box notification">
-                                <p>
-                                    <Link
-                                        className="title has-text-primary is-size-4"
-                                        to={post.fields.slug}
-                                    >
-                                        {post.frontmatter.title}
-                                    </Link>
-                                    <span className="subtitle is-size-5 is-block">
-                                        {post.frontmatter.date}
-                                    </span>
-                                </p>
-                            </article>
+                        <div className="ticket" key={post.id}>
+                            <div className="ticket-top">
+                                <Link to={post.fields.slug} className="title">
+                                    {post.frontmatter.title}
+                                </Link>
+                                <span className="arrow">→</span>
+                            </div>
+                            <div className="ticket-bottom">
+                                <p className="date">{post.frontmatter.date}</p>
+                            </div>
                         </div>
                     ))}
             </div>
@@ -59,7 +55,7 @@ export default () => (
                             frontmatter {
                                 title
                                 templateKey
-                                date(formatString: "MMMM YYYY")
+                                date(formatString: "MMM YYYY")
                             }
                         }
                     }
