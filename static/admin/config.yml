@@ -39,10 +39,18 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Description', name: 'description', widget: 'text' }
-          - { label: 'Preview Image', name: 'preview', widget: 'image' }
-          - { label: 'Circle', name: 'circle', widget: 'image' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
           - { label: 'Tags', name: 'tags', widget: 'list' }
+          - {
+                label: 'Preview Image',
+                name: 'previewImage',
+                widget: 'object',
+                fields:
+                    [
+                        { label: 'Image', name: 'image', widget: 'image' },
+                        { label: 'Alt', name: 'alt', widget: 'string' },
+                    ],
+            }
 
     - name: 'pages'
       label: 'Pages'
