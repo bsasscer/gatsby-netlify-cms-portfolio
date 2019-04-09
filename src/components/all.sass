@@ -107,31 +107,29 @@ nav .option-number
 .button:hover
   box-shadow: 4px 4px 0px 0px rgba(51, 51, 50, 1)
 
-.projects-list
-  display: grid
-  grid-gap: 10px
-  grid-template-columns: 250px 250px 250px
-
-.projects-list a 
-  text-decoration: none
-
-.ticket
-  background: #fff
-  border-top: 10px solid $dark-blue
+ul .projects-list
   display: flex
   flex-direction: column
-  padding: 1rem
 
-.ticket:hover .preview-img
+.projects-list .project-link
+  align-items: center
+  border-bottom: 2px solid $dark-blue
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  line-height: 1.6
+  padding: 1rem 0
+  text-decoration: none
+
+
+
+.project-link .title
+  margin: 0
+
+a:hover .preview-img
   display: block
   
-.ticket-top
-  display: flex
-  justify-content: space-between
-
-.ticket-top .title
-  text-transform: uppercase
-
 .date
   font-family: roboto-mono, monospace
 

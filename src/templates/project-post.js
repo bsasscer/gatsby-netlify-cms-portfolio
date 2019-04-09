@@ -54,6 +54,7 @@ ProjectPostTemplate.propTypes = {
     contentComponent: PropTypes.func,
     description: PropTypes.string,
     title: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     helmet: PropTypes.object
 };
 
@@ -96,7 +97,7 @@ export const pageQuery = graphql`
             id
             html
             frontmatter {
-                date(formatString: "MMMM YYYY")
+                date(formatString: "MMM YYYY")
                 title
                 description
                 tags

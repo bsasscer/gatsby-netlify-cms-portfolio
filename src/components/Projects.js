@@ -8,29 +8,24 @@ class Projects extends React.Component {
         const { edges: posts } = data.allMarkdownRemark;
 
         return (
-            <div className="projects-list">
+            <ul className="projects-list">
                 {posts &&
                     posts.map(({ node: post }) => (
-                        <Link
-                            to={post.fields.slug}
-                            className="ticket"
-                            key={post.id}
-                        >
-                            <div className="ticket-top">
-                                <div className="title">
+                        <li className="project-item" key={post.id}>
+                            <Link
+                                to={post.fields.slug}
+                                className="project-link"
+                            >
+                                <h2 className="title">
                                     {post.frontmatter.title}
-                                </div>
-                                <span className="arrow">→</span>
-                            </div>
-                            <div className="ticket-middle">
-                                <p className="excerpt">{post.excerpt}</p>
-                            </div>
-                            <div className="ticket-bottom">
-                                <p className="date">{post.frontmatter.date}</p>
-                            </div>
-                        </Link>
+                                </h2>
+                                <span className="date">
+                                    {post.frontmatter.date}
+                                </span>
+                            </Link>
+                        </li>
                     ))}
-            </div>
+            </ul>
         );
     }
 }
@@ -55,7 +50,6 @@ export default () => (
                 ) {
                     edges {
                         node {
-                            excerpt(pruneLength: 200)
                             id
                             fields {
                                 slug
