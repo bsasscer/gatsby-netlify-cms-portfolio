@@ -41,6 +41,7 @@ collections:
           - { label: 'Description', name: 'description', widget: 'text' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
           - { label: 'Tags', name: 'tags', widget: 'list' }
+          - { label: 'Circle', name: 'circle', widget: 'image' }
           - {
                 label: 'Preview Image',
                 name: 'previewImage',

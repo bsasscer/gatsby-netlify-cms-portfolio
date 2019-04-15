@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 class Projects extends React.Component {
     render() {
@@ -20,10 +19,24 @@ class Projects extends React.Component {
                                 <h2 className="title">
                                     {post.frontmatter.title}
                                 </h2>
-                                <span className="date">
-                                    {post.frontmatter.date}
-                                </span>
+                                <img
+                                    className="hover-item-show"
+                                    src={
+                                        post.frontmatter.previewImage.image
+                                            .publicURL
+                                    }
+                                    alt={post.frontmatter.previewImage.alt}
+                                />
                             </Link>
+                            <span
+                                className="color-coded-circle"
+                                style={{
+                                    backgroundColor: '#005a28',
+                                    borderRadius: '50%',
+                                    width: '40px',
+                                    height: '40px'
+                                }}
+                            />
                         </li>
                     ))}
             </ul>
@@ -59,6 +72,12 @@ export default () => (
                                 title
                                 templateKey
                                 date(formatString: "MMM YYYY")
+                                previewImage {
+                                    alt
+                                    image {
+                                        publicURL
+                                    }
+                                }
                             }
                         }
                     }

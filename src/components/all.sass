@@ -1,29 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+  
 @import url("https://use.typekit.net/pzt3kof.css");
-@font-face
-  font-family: "BC-Falster-Grotesk-Regular"
-  src: url("../fonts/BC-Falster-Grotesk-Regular-5eff2d62beb194306abca5585932f2b5.woff2") format("woff2"), url("../fonts/BC-Falster-Grotesk-Regular-5eff2d62beb194306abca5585932f2b5.woff") format("woff")
-  font-weight: normal
-  font-style: normal
 
 // Config vars
-// Logo brand colors: dark-blue | zumthor
-$base: #f1f0ee
-$base-dark: darken($base, 25%)
-$base-light: lighten($base, 25%)
-$dark-blue: #0032d1
-$zumthor: #e7eeff
 
-$primary-color: $dark-blue
-$primary-color-light: lighten($primary-color, 10%)
-$accent-color: $zumthor
-$body-color: #333332
+$early-dawn: #fff8e6
+$sea-buckthorn: #FCA92C
+$jacksons-purple: #2727a4
+$electric-violet: #5e06d9
+$oxford-blue: #3d495c
+$heading-large: #202121
+$body-color: #202121
 $black: #30302f
 
 body
-  background: rgb(241, 240, 238)
+  background: $early-dawn
   color: $body-color
   height: 100%
-  font-family: proxima-nova, sans-serif
+  font-family: p22-underground, sans-serif
   margin: 0
   overflow: hidden
   width: 100%
@@ -33,11 +27,6 @@ ul
   padding: 0
   list-style: none
 
-.container
-  display: grid
-  height: 100vh
-  grid-template-columns: auto 1fr 2fr
-  grid-template-rows: 100px minmax(100px, 1fr) 100px
 
 aside
   display: grid
@@ -53,17 +42,20 @@ aside
 .nav
   border-right: 1px solid rgba(48, 48, 47, .5)
 
-main
-  grid-column-start: 3
-  padding: 5rem
-  overflow-y: scroll
-  height: 100vh
+.salutations
+  font-family: 'Playfair Display', sans-serif
+  color: $jacksons-purple
+  line-height: 1.2
+  width: 80vw
+  font-size: 36px
+  text-align: justify
+  margin: 60px auto
+  max-width: 930px
 
-.home
-  grid-row-start: 2
-  grid-row-end: 4
-  display: grid
-  grid-template-columns: 1fr 2fr
+.salutations span a
+  color: $body-color
+  margin-right: 5px
+  text-decoration: none
 
 .logo-box
   height: 50px
@@ -113,22 +105,28 @@ ul .projects-list
 
 .projects-list .project-link
   align-items: center
-  border-bottom: 2px solid $dark-blue
   display: flex
   flex-direction: row
   flex-wrap: wrap
   justify-content: space-between
-  line-height: 1.6
+  line-height: 1.3
   padding: 1rem 0
   text-decoration: none
-
-
 
 .project-link .title
   margin: 0
 
-a:hover .preview-img
-  display: block
+.hover-item-show
+  visibility: hidden
+  position: absolute
+  opacity: 0
+  transition: opacity 0.5s
+  z-index: 100
+
+.project-item:hover img.hover-item-show
+  opacity: 1
+  visibility: inherit
+  transition: opacity 0.5s
   
 .date
   font-family: roboto-mono, monospace
@@ -160,7 +158,7 @@ a:hover .preview-img
 
 
 .icon svg:hover path
-  fill: $base-light
+
 
 footer .footer
   display: flex

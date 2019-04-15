@@ -11,6 +11,7 @@ export const ProjectPostTemplate = ({
     contentComponent,
     description,
     tags,
+    previewImage,
     title,
     helmet
 }) => {
@@ -54,7 +55,7 @@ ProjectPostTemplate.propTypes = {
     contentComponent: PropTypes.func,
     description: PropTypes.string,
     title: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    previewImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     helmet: PropTypes.object
 };
 
@@ -78,6 +79,7 @@ const ProjectPost = ({ data }) => {
                 }
                 tags={post.frontmatter.tags}
                 title={post.frontmatter.title}
+                previewImage={post.frontmatter.previewImage}
             />
         </Layout>
     );
@@ -101,6 +103,12 @@ export const pageQuery = graphql`
                 title
                 description
                 tags
+                previewImage {
+                    alt
+                    image {
+                        publicURL
+                    }
+                }
             }
         }
     }

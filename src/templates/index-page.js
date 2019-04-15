@@ -6,12 +6,22 @@ import Layout from '../components/Layout';
 export const IndexPageTemplate = ({ title }) => (
     <div className="home">
         <div className="salutations">
-            <h3>{title}</h3>
-            <div>
-                <Link to="/projects" className="button">
-                    SEE PROJECTS
+            <span>
+                <Link to="/about">
+                    Hi, I'm Bianca. I'm a front end developer living the design
+                    life in San Diego&mdash;
                 </Link>
-            </div>
+            </span>
+            <span>
+                <Link to="/projects">
+                    I enjoy combining the art of design with the art of
+                    programming in Projects&mdash;
+                </Link>
+            </span>
+            <span>
+                <Link to="/blog">I occasionally Post&mdash;</Link>
+            </span>
+            <span />
         </div>
     </div>
 );
