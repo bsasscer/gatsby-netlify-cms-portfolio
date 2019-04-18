@@ -11,32 +11,26 @@ class Projects extends React.Component {
             <ul className="projects-list">
                 {posts &&
                     posts.map(({ node: post }) => (
-                        <li className="project-item" key={post.id}>
-                            <Link
-                                to={post.fields.slug}
-                                className="project-link"
-                            >
-                                <h2 className="title">
-                                    {post.frontmatter.title}
-                                </h2>
+                        <li className="hover-item project-item" key={post.id}>
+                            <Link to={post.fields.slug}>
+                                <h3 className="project-title">
+                                    <span className="serif-type">
+                                        {post.frontmatter.title}
+                                        &nbsp;&mdash;&nbsp;
+                                    </span>
+                                    <span className="project-date date">
+                                        {post.frontmatter.date}
+                                    </span>
+                                </h3>
                                 <img
-                                    className="hover-item-show"
                                     src={
                                         post.frontmatter.previewImage.image
                                             .publicURL
                                     }
+                                    className="hover-image-show preview-image"
                                     alt={post.frontmatter.previewImage.alt}
                                 />
                             </Link>
-                            <span
-                                className="color-coded-circle"
-                                style={{
-                                    backgroundColor: '#005a28',
-                                    borderRadius: '50%',
-                                    width: '40px',
-                                    height: '40px'
-                                }}
-                            />
                         </li>
                     ))}
             </ul>

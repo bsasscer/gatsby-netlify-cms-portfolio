@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import './all.sass';
+import Navbar from './Navbar';
+import '../helpers/cursor';
 import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
@@ -110,6 +112,8 @@ const TemplateWrapper = ({ children }) => {
                 <meta property="og:url" content="/" />
                 <meta property="og:image" content="/img/og-image.jpg" />
             </Helmet>
+            <div className="cursor cursor--small" />
+            <Navbar />
             <main className="main">{children}</main>
         </div>
     );

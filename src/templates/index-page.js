@@ -1,28 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Projects from '../components/Projects';
 
 export const IndexPageTemplate = ({ title }) => (
-    <div className="home">
-        <div className="salutations">
-            <span>
-                <Link to="/about">
-                    Hi, I'm Bianca. I'm a front end developer living the design
-                    life in San Diego&mdash;
-                </Link>
-            </span>
-            <span>
-                <Link to="/projects">
-                    I enjoy combining the art of design with the art of
-                    programming in Projects&mdash;
-                </Link>
-            </span>
-            <span>
-                <Link to="/blog">I occasionally Post&mdash;</Link>
-            </span>
-            <span />
-        </div>
+    <div>
+        <Projects />
     </div>
 );
 

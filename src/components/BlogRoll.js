@@ -15,26 +15,23 @@ class BlogRoll extends React.Component {
                             <article className="tile is-child box notification">
                                 <p>
                                     <Link
-                                        className="title has-text-primary is-size-4"
+                                        className="headline-text"
                                         to={post.fields.slug}
                                     >
                                         {post.frontmatter.title}
                                     </Link>
-                                    <span className="subtitle is-size-5 is-block">
+                                    <span className="date">
                                         {post.frontmatter.date}
                                     </span>
                                 </p>
-                                <p>
+                                <p className="summary-text">
                                     {post.excerpt}
                                     <br />
                                     <br />
-                                    <Link
-                                        className="button"
-                                        to={post.fields.slug}
-                                    >
-                                        Keep Reading →
-                                    </Link>
                                 </p>
+                                <Link className="button" to={post.fields.slug}>
+                                    KEEP READING
+                                </Link>
                             </article>
                         </div>
                     ))}
@@ -63,7 +60,7 @@ export default () => (
                 ) {
                     edges {
                         node {
-                            excerpt(pruneLength: 400)
+                            excerpt(pruneLength: 200)
                             id
                             fields {
                                 slug
