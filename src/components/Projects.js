@@ -8,32 +8,31 @@ class Projects extends React.Component {
         const { edges: posts } = data.allMarkdownRemark;
 
         return (
-            <ul className="projects-list">
+            <div className="projects-list">
                 {posts &&
                     posts.map(({ node: post }) => (
-                        <li className="hover-item project-item" key={post.id}>
+                        <div className="project-item" key={post.id}>
                             <Link to={post.fields.slug}>
-                                <h3 className="project-title">
+                                {/* <h3 className="project-title">
                                     <span className="serif-type">
                                         {post.frontmatter.title}
-                                        &nbsp;&mdash;&nbsp;
-                                    </span>
-                                    <span className="project-date date">
-                                        {post.frontmatter.date}
                                     </span>
                                 </h3>
+                                <p className="project-date date">
+                                    {post.frontmatter.date}
+                                </p> */}
                                 <img
                                     src={
                                         post.frontmatter.previewImage.image
                                             .publicURL
                                     }
-                                    className="hover-image-show preview-image"
+                                    className="preview-image"
                                     alt={post.frontmatter.previewImage.alt}
                                 />
                             </Link>
-                        </li>
+                        </div>
                     ))}
-            </ul>
+            </div>
         );
     }
 }

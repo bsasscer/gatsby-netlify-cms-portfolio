@@ -1,16 +1,17 @@
 @import url("https://use.typekit.net/pzt3kof.css");
 
 // Config vars
-$blue-ribbon: #2D38FE
-$bridal-heath: #FFF9F1
-$carnation: #f85959
+$soapstone: #FFFAF7
+$body-background-color: $soapstone
+
+$indigo: #526BCD
 $cornflower-blue: #5491f3
-$rhino: #2a3660
-$deep-saffron: #FFA630
-$persimmon: #FF5E5B
+$outrageous-orange: #FE583A
+$mortar: #433544
+
 $spring-wood: #f9f7f3
 $black: #30302f
-$primary: $blue-ribbon
+$primary: $indigo
 $headline-text: orpheuspro, serif
 $byline-date-text: commuters-sans, sans-serif
 $body-text: capitolium-2, serif
@@ -18,149 +19,74 @@ $body-text-header: commuters-sans, sans-serif
 $summary-text: commuters-sans, sans-serif
 $button-text: commuters-sans, sans-serif
 $body-color: #202121
+
+$navbar-background-color: transparent
+$navbar-box-shadow-color: $spring-wood
+$navbar-item-color: $indigo
+$navbar-item-hover-color: $cornflower-blue
+$navbar-item-hover-background-color: transparent
+$navbar-tab-hover-border-bottom-color: 1px solid $outrageous-orange
+$navbar-tab-active-color: $outrageous-orange
+$navbar-tab-active-border-bottom-color: 1px solid $outrageous-orange
+
+//Menu overrides
+$menu-item-color: $primary
+$menu-item-hover-color: $cornflower-blue !important
+$menu-item-hover-background-color: $outrageous-orange
+$menu-item-active-color: $cornflower-blue
+$menu-list-border-left: 1px solid $cornflower-blue
+$menu-label-color: $cornflower-blue
   
 body
-  background: $bridal-heath
-  color: $body-color
-  height: 100%
+  background: $soapstone
+  color: $mortar
   font-family: $body-text
   font-weight: 400
   font-style: normal
   margin: 0
   overflow: hidden
-  width: 100%
 
 // body, body a
 //   cursor: none
 
-.cursor
-  position: fixed
-  left: 0
-  top: 0
-  pointer-events: none
-
-.cursor--small
-  width: 5px
-  height: 5px
-  left: -2.5px
-  top: -2.5px
-  border-radius: 50%
-  z-index: 11000
-  background: $persimmon
-
 ul
-  margin: 0
-  padding: 0
-  list-style: none 
+  margin: 0 !important
+  padding: 0 !important
+  list-style: none !important
 
-.main-header,
-.nav
-  display: flex
-  flex-direction: column
+.navbar
+  padding: 1.25em 0
 
-.main-header
-  padding-top: 2em
-  margin: 0 auto
-  max-width: 950px
-
-.logo
-  color: $primary
-  align-self: center
+.navbar-brand .logo
   font-family: commuters-sans, sans-serif
   font-weight: 700
   font-style: normal
-  text-decoration: none
+  text-transform: uppercase
 
-.logo:hover
-  color: $cornflower-blue
-
-.nav
-  margin-top: 1.5em
-
-.nav a
-  display: block
+#navMenu
   font-size: 1.125em
-  font-weight: 400
-  text-align: center
-  text-decoration: none
+  font-weight: 500 !important
   font-family: orpheuspro, serif
   font-weight: normal
   letter-spacing: 2px
-  padding: .4em
-  border-bottom: 1px solid $persimmon
-  color: $primary
 
-.nav a:hover
-  color: $cornflower-blue
-  border-bottom-color: #52bab3
+.menu-label
+  font-size: 1em !important
+  text-align: left
 
-.main ul.projects-list
-  width: 80vw
-  margin: 60px auto
-  max-width: 930px
+.menu-list
+  list-style: none !important
+  text-align: left
 
-.main ul.projects-list .project-item
-  border-bottom: 1px solid $cornflower-blue
+.projects-list
+  display: grid
+  grid-gap: 10px
+  grid-template-columns: repeat(3, minmax(200px, 1fr))
+  margin: 0 auto
+  max-width: 1200px
 
-.main ul.projects-list .project-item a
-  text-decoration: none
 
-.main ul.projects-list .project-item a:hover h3
-  color: $cornflower-blue
-  
-.project-item h3
-  color: $rhino
-  display: flex
-  flex-wrap: wrap
-  align-items: baseline
-  line-height: 1.5
-  margin: 0
-  transition: 0.5s
-  justify-content: space-between
-
-.headline-text
-  color: $blue-ribbon 
-  font-family: $headline-text
-  font-style: normal
-  font-weight: 400
-  text-decoration: none
-
-.body-text-header
-  font-family: $body-text-header
-
-p.summary-text
-  font-family: $summary-text
-  font-style: normal
-  font-weight: 400
-
-span.serif-type
-  font-family: $headline-text
-  font-size: 2.25rem
-  font-weight: 400
-
-span.date
-  font-family: $byline-date-text
-  font-style: normal
-  font-size: 1.375rem
-  font-weight: 400
-
-.preview-image
-  max-width: 400px
-
-.hover-item:hover .hover-image-show
-  opacity: 1
-  visibility: inherit
-  top: 20vh
-  transition: opacity 0.5s
- 
-.hover-image-show
-  visibility: hidden
-  position: absolute
-  opacity: 0
-  transition: opacity 0.5s
-  z-index: 100
-
-.button
+.btn
   box-shadow: 4px 4px 0px 0px rgba(51, 51, 50, 1)
   border: 1px solid rgba(51, 51, 50, 1)
   color: $body-color
@@ -172,36 +98,21 @@ span.date
   text-decoration: none
   transition: all 0.1s cubic-bezier(0, 0, 0.25, 1)
 
-.button:hover
+.btn:hover
   border: 1px solid $cornflower-blue
   color: $cornflower-blue
   box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, .5)
   margin: 4px 0 0 4px
-
-@media (min-width: 769px)
-  .main-header 
-    height: 200px
-    justify-content: flex-end
-
   
-  .nav
-    flex-direction: row
-    justify-content: space-between
-    margin-top: 3em
-
-  .nav a
-    border-bottom-color: transparent
-
-
-@media (min-width: 1025px)
-  .main-header
-    flex-direction: row
-    justify-content: space-between
-
-  .nav
-    align-self: center
-    margin-top: 0
-
-  .nav li
-    margin-left: .65em
-    margin-right: .65em
+.navbar-item .icon
+  color: $primary
+// Override for use of svg's from https://simpleicons.org/
+.icon svg
+  width: 1.5rem
+  height: 1.5rem
+  fill: currentColor
+.navbar-brand .navbar-item.logo
+  padding: 0 1rem
+ 
+@import "~bulma"
+@import "~bulma/sass/utilities/initial-variables"
