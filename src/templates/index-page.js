@@ -6,10 +6,10 @@ import Projects from '../components/Projects';
 
 export const IndexPageTemplate = ({ title }) => (
     <div>
-        <section className="hero is-fullheight">
+        <section className="hero is-fullheight" id="hero">
             <div className="hero-body">
                 <div className="container">
-                    <h1 className="title has-text-centered">Large title</h1>
+                    <h1 className="title has-text-centered">{title}</h1>
                     <h2 className="subtitle has-text-centered">
                         Large subtitle
                     </h2>

@@ -8,33 +8,34 @@ class BlogRoll extends React.Component {
         const { edges: posts } = data.allMarkdownRemark;
 
         return (
-            <div className="columns is-multiline">
-                {posts &&
-                    posts.map(({ node: post }) => (
-                        <div className="is-parent column is-6" key={post.id}>
-                            <article className="tile is-child box notification">
-                                <p>
-                                    <Link
-                                        className="headline-text"
-                                        to={post.fields.slug}
-                                    >
-                                        {post.frontmatter.title}
-                                    </Link>
-                                    <span className="date">
-                                        {post.frontmatter.date}
-                                    </span>
-                                </p>
-                                <p className="summary-text">
-                                    {post.excerpt}
-                                    <br />
-                                    <br />
-                                </p>
-                                <Link className="btn" to={post.fields.slug}>
+            <div className="container">
+                <div className="post-list">
+                    {posts &&
+                        posts.map(({ node: post }) => (
+                            <div className="post-item" key={post.id}>
+                                <div className="cell-left">
+                                    <p>Circle</p>
+                                </div>
+                                <div className="cell-middle">
+                                    <p>
+                                        <Link to={post.fields.slug}>
+                                            {post.frontmatter.title}
+                                        </Link>
+                                    </p>
+                                    {/* <p>{post.excerpt}</p> */}
+                                </div>
+                                <div className="cell-right">
+                                    <p>{post.frontmatter.date}</p>
+                                    {/* <Link
+                                    className="btn-link"
+                                    to={post.fields.slug}
+                                >
                                     KEEP READING
-                                </Link>
-                            </article>
-                        </div>
-                    ))}
+                                </Link> */}
+                                </div>
+                            </div>
+                        ))}
+                </div>
             </div>
         );
     }
@@ -60,7 +61,7 @@ export default () => (
                 ) {
                     edges {
                         node {
-                            excerpt(pruneLength: 200)
+                            excerpt(pruneLength: 100)
                             id
                             fields {
                                 slug

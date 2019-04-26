@@ -1,0 +1,150 @@
+@import url('https://use.typekit.net/pzt3kof.css');
+@import url('../fonts/fonts.scss');
+
+// Config vars
+$soapstone: #fffaf7;
+$spring-wood: #f9f7f3;
+$indigo: #526bcd;
+$blue-marguerite: #6666cc;
+$cornflower-blue: #6699ff;
+$bittersweet: #ff6f61;
+$mortar: #433544;
+$black: #30302f;
+$body-color: #202121;
+$body-background-color: $soapstone;
+
+$primary: $indigo;
+$secondary-font: orpheuspro, serif;
+$primary-font: 'mabry-regular-pro', sans-serif;
+$navbar-background-color: $soapstone;
+$navbar-box-shadow-color: $spring-wood;
+$navbar-item-color: $indigo;
+$navbar-item-hover-color: $cornflower-blue;
+$navbar-item-hover-background-color: transparent;
+$navbar-tab-hover-border-bottom-color: 1px solid $bittersweet;
+$navbar-tab-active-color: $bittersweet;
+$navbar-tab-active-border-bottom-color: 1px solid $bittersweet;
+
+//Menu overrides
+$menu-item-color: $primary;
+$menu-item-hover-color: $cornflower-blue !important;
+$menu-item-hover-background-color: $bittersweet;
+$menu-item-active-color: $cornflower-blue;
+$menu-list-border-left: 1px solid $cornflower-blue;
+$menu-label-color: $cornflower-blue;
+
+body {
+    background: $soapstone;
+    color: $mortar;
+    font-family: $primary-font !important;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    overflow: hidden;
+}
+
+// body, body a
+//   cursor: none
+
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+p {
+    font-size: 1.313em;
+}
+
+.navbar {
+    padding: 1.25em 0;
+}
+
+.navbar > .container {
+    align-items: baseline !important;
+}
+
+.navbar-brand {
+    .logo {
+        font-family: 'mabry-medium-pro', sans-serif;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-style: normal;
+    }
+}
+
+#navMenu {
+    font-size: 1.125em;
+    font-weight: 500 !important;
+    font-family: orpheuspro, serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.menu-label {
+    font-size: 1em !important;
+    text-align: left;
+}
+
+.menu-list {
+    list-style: none !important;
+    text-align: left;
+}
+
+#hero {
+    min-height: 85vh;
+}
+
+.projects-list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+
+    .post-item {
+        border-top: 2px solid $indigo;
+        display: grid;
+        grid-template-columns: 200px 1fr auto;
+        padding: 2em 0;
+    }
+}
+
+.btn-link {
+    box-shadow: 4px 4px 0px 0px rgba(51, 51, 50, 1);
+    border: 1px solid rgba(51, 51, 50, 1);
+    color: $body-color;
+    font-weight: 700;
+    font-style: normal;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all 0.1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.btn-link:hover {
+    border: 1px solid $cornflower-blue;
+    color: $cornflower-blue;
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+    margin: 4px 0 0 4px;
+}
+
+.navbar-item .icon {
+    color: $primary;
+}
+
+// Override for use of svg's from https://simpleicons.org/
+.icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+@import '~bulma';
+@import '~bulma/sass/utilities/initial-variables';

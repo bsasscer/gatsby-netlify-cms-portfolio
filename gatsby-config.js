@@ -2,9 +2,9 @@ var proxy = require('http-proxy-middleware');
 
 module.exports = {
     siteMetadata: {
-        title:
-            'Bianca Sasscer | Bianca Sasscer is a designer and front end developer in San Diego, CA',
-        description: 'Designer and Web Developer for hire.'
+        title: 'Bianca Sasscer | Designer and Web Developer for hire',
+        description:
+            'Bianca Sasscer is a designer and front end developer for hire in San Diego, CA.'
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -71,7 +71,7 @@ module.exports = {
             resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
             options: {
                 develop: true, // Activates purging in npm run develop
-                purgeOnly: ['/all.sass'] // applies purging only on the bulma css file
+                purgeOnly: ['/all.scss'] // applies purging only on the bulma css file
             }
         }, // must be after other CSS plugins
         'gatsby-plugin-netlify' // make sure to keep it last in the array

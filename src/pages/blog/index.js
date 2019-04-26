@@ -7,7 +7,6 @@ export default class BlogIndexPage extends React.Component {
     render() {
         return (
             <Layout>
-                <h1 className="body-text-header">Latest</h1>
                 <BlogRoll />
             </Layout>
         );

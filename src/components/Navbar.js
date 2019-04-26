@@ -33,14 +33,14 @@ const Navbar = class extends React.Component {
     render() {
         return (
             <nav
-                className="navbar is-transparent is-fixed-top"
+                className="navbar is-fixed-top"
                 role="navigation"
                 aria-label="main-navigation"
             >
-                <div className="container">
+                <div className="container nav-wrapper">
                     <div className="navbar-brand">
                         <Link to="/" className="logo navbar-item" title="Logo">
-                            BIANCA SASSCER
+                            Bianca Sasscer
                         </Link>
                         {/* Hamburger menu */}
                         <div
@@ -65,11 +65,8 @@ const Navbar = class extends React.Component {
                             <Link className="navbar-item" to="/about">
                                 About
                             </Link>
-                            <Link className="navbar-item" to="/products">
-                                Products
-                            </Link>
                             <Link className="navbar-item" to="/blog">
-                                Blog
+                                Journal
                             </Link>
                             <Link className="navbar-item" to="/contact">
                                 Contact

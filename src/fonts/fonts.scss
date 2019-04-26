@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'mabry-regular-pro';
+    src: url('../fonts/mabry-regular-pro.eot');
+    src: url('../fonts/mabry-regular-pro.eot?#iefix')
+            format('embedded-opentype'),
+        url('../fonts/mabry-regular-pro.woff2') format('woff2'),
+        url('../fonts/mabry-regular-pro.woff') format('woff'),
+        url('../fonts/mabry-regular-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mabry-medium-pro';
+    src: url('../fonts/mabry-medium-pro.eot');
+    src: url('../fonts/mabry-medium-pro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/mabry-medium-pro.woff2') format('woff2'),
+        url('../fonts/mabry-medium-pro.woff') format('woff'),
+        url('../fonts/mabry-medium-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
