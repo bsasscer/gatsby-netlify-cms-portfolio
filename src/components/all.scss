@@ -3,7 +3,7 @@
 
 // Config vars
 $soapstone: #fffaf7;
-$spring-wood: #f9f7f3;
+$seashell: #fef4eb;
 $indigo: #526bcd;
 $blue-marguerite: #6666cc;
 $cornflower-blue: #6699ff;
@@ -13,12 +13,12 @@ $black: #30302f;
 $body-color: #202121;
 $body-background-color: $soapstone;
 
-$primary: $indigo;
+$primary: $blue-marguerite;
 $secondary-font: orpheuspro, serif;
 $primary-font: 'mabry-regular-pro', sans-serif;
 $navbar-background-color: $soapstone;
-$navbar-box-shadow-color: $spring-wood;
-$navbar-item-color: $indigo;
+$navbar-box-shadow-color: $seashell;
+$navbar-item-color: $primary;
 $navbar-item-hover-color: $cornflower-blue;
 $navbar-item-hover-background-color: transparent;
 $navbar-tab-hover-border-bottom-color: 1px solid $bittersweet;
@@ -45,12 +45,6 @@ body {
 
 // body, body a
 //   cursor: none
-
-ul {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
 
 p {
     font-size: 1.313em;
@@ -108,11 +102,16 @@ p {
     flex-direction: column;
     margin-top: 5em;
 
-    .post-item {
-        border-top: 2px solid $indigo;
+    .post-item a {
+        border-top: 2px solid $primary;
+        color: $mortar;
         display: grid;
         grid-template-columns: 200px 1fr auto;
         padding: 2em 0;
+
+        &:hover {
+            color: $cornflower-blue;
+        }
     }
 }
 
