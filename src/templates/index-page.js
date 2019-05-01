@@ -8,11 +8,9 @@ export const IndexPageTemplate = ({ title }) => (
     <div>
         <section className="hero is-fullheight" id="hero">
             <div className="hero-body">
-                <div className="container">
-                    <h1 className="title has-text-centered">{title}</h1>
-                    <h2 className="subtitle has-text-centered">
-                        Large subtitle
-                    </h2>
+                <div className="container has-text-centered">
+                    <h1 className="title">{title}</h1>
+                    <h2 className="subtitle">Large subtitle</h2>
                 </div>
             </div>
         </section>

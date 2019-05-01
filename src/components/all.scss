@@ -4,34 +4,32 @@
 // Config vars
 $soapstone: #fffaf7;
 $seashell: #fef4eb;
-$indigo: #526bcd;
 $blue-marguerite: #6666cc;
-$cornflower-blue: #6699ff;
-$bittersweet: #ff6f61;
+$vermilion: #fe3c00;
+$patina: #669999;
+$rhino: #333366;
 $mortar: #433544;
-$black: #30302f;
-$body-color: #202121;
+$shark: #202121;
+$body-color: $shark;
 $body-background-color: $soapstone;
 
-$primary: $blue-marguerite;
+$primary: $rhino;
 $secondary-font: orpheuspro, serif;
 $primary-font: 'mabry-regular-pro', sans-serif;
 $navbar-background-color: $soapstone;
 $navbar-box-shadow-color: $seashell;
-$navbar-item-color: $primary;
-$navbar-item-hover-color: $cornflower-blue;
+$navbar-item-color: $rhino;
+$navbar-item-hover-color: $blue-marguerite;
+$navbar-item-active-color: $blue-marguerite;
 $navbar-item-hover-background-color: transparent;
-$navbar-tab-hover-border-bottom-color: 1px solid $bittersweet;
-$navbar-tab-active-color: $bittersweet;
-$navbar-tab-active-border-bottom-color: 1px solid $bittersweet;
 
 //Menu overrides
 $menu-item-color: $primary;
-$menu-item-hover-color: $cornflower-blue !important;
-$menu-item-hover-background-color: $bittersweet;
-$menu-item-active-color: $cornflower-blue;
-$menu-list-border-left: 1px solid $cornflower-blue;
-$menu-label-color: $cornflower-blue;
+$menu-item-hover-color: $blue-marguerite !important;
+$menu-item-hover-background-color: transparent;
+$menu-item-active-color: $blue-marguerite;
+$menu-list-border-left: 1px solid $blue-marguerite;
+$menu-label-color: $blue-marguerite;
 
 body {
     background: $soapstone;
@@ -52,19 +50,25 @@ p {
 
 .navbar {
     padding: 1.25em 0;
+
+    .navbar-brand {
+        .logo {
+            font-family: 'mabry-medium-pro', sans-serif;
+            font-size: 1.5em;
+            font-weight: 500;
+            font-style: normal;
+        }
+    }
+
+    .is-active {
+        font-family: orpheuspro, serif;
+        font-weight: 400;
+        font-style: italic;
+    }
 }
 
 .navbar > .container {
     align-items: baseline !important;
-}
-
-.navbar-brand {
-    .logo {
-        font-family: 'mabry-medium-pro', sans-serif;
-        font-size: 1.5em;
-        font-weight: 500;
-        font-style: normal;
-    }
 }
 
 #navMenu {
@@ -100,18 +104,40 @@ p {
 .post-list {
     display: flex;
     flex-direction: column;
+    list-style: none;
     margin-top: 5em;
 
-    .post-item a {
-        border-top: 2px solid $primary;
-        color: $mortar;
-        display: grid;
-        grid-template-columns: 200px 1fr auto;
-        padding: 2em 0;
+    .post-item {
+        a {
+            border-top: 2px solid $primary;
+            color: $rhino;
+            display: grid;
+            grid-template-columns: 200px 1fr auto;
+            padding: 2em 0;
 
-        &:hover {
-            color: $cornflower-blue;
+            p {
+                z-index: 2;
+            }
+
+            &:hover {
+                color: $blue-marguerite;
+            }
         }
+    }
+    .hover-item:hover .hover-item-show {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.5s;
+    }
+
+    .hover-item-show {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 1;
+        max-height: 30vh;
+        transform: translate(50%, -50%);
     }
 }
 
@@ -128,8 +154,8 @@ p {
 }
 
 .btn-link:hover {
-    border: 1px solid $cornflower-blue;
-    color: $cornflower-blue;
+    border: 1px solid $blue-marguerite;
+    color: $blue-marguerite;
     box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.5);
     margin: 4px 0 0 4px;
 }

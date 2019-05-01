@@ -12,10 +12,10 @@ class BlogRoll extends React.Component {
                 <div className="post-list">
                     {posts &&
                         posts.map(({ node: post }) => (
-                            <div className="post-item" key={post.id}>
+                            <div className="hover-item post-item" key={post.id}>
                                 <Link to={post.fields.slug}>
                                     <div className="cell-left">
-                                        <p>Circle</p>
+                                        <p>{post.frontmatter.category}</p>
                                     </div>
                                     <div className="cell-middle">
                                         <p>{post.frontmatter.title}</p>
@@ -23,6 +23,14 @@ class BlogRoll extends React.Component {
                                     <div className="cell-right">
                                         <p>{post.frontmatter.date}</p>
                                     </div>
+                                    <img
+                                        src={
+                                            post.frontmatter.previewImage.image
+                                                .publicURL
+                                        }
+                                        className="hover-item-show"
+                                        alt={post.frontmatter.previewImage.alt}
+                                    />
                                 </Link>
                             </div>
                         ))}
@@ -61,6 +69,13 @@ export default () => (
                                 title
                                 templateKey
                                 date(formatString: "DD MMM YYYY")
+                                category
+                                previewImage {
+                                    alt
+                                    image {
+                                        publicURL
+                                    }
+                                }
                             }
                         }
                     }
