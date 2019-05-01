@@ -47,12 +47,32 @@ collections:
                 widget: 'hidden',
                 default: 'project-post',
             }
-          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Client Name', name: 'clientName', widget: 'string' }
+          - {
+                label: 'Client Occupation',
+                name: 'clientOccupation',
+                widget: 'string',
+            }
+          - { label: 'Cover Image', name: 'coverImage', widget: image }
+          - { label: 'Client Sector', name: 'clientSector', widget: 'string' }
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - { label: 'Heading', name: 'heading', widget: 'string' }
+          - { label: 'Subheading', name: 'subheading', widget: 'string' }
           - { label: 'Description', name: 'description', widget: 'text' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
           - { label: 'Tags', name: 'tags', widget: 'list' }
           - { label: 'Circle', name: 'circle', widget: 'image' }
+          - { label: Full_image, name: full_image, widget: image }
+          - {
+                label: Testimonials,
+                name: testimonials,
+                widget: list,
+                fields:
+                    [
+                        { label: Quote, name: quote, widget: string },
+                        { label: Author, name: author, widget: string },
+                    ],
+            }
           - {
                 label: 'Preview Image',
                 name: 'previewImage',

@@ -6,7 +6,6 @@ $soapstone: #fffaf7;
 $seashell: #fef4eb;
 $blue-marguerite: #6666cc;
 $vermilion: #fe3c00;
-$patina: #669999;
 $rhino: #333366;
 $mortar: #433544;
 $shark: #202121;
@@ -20,20 +19,20 @@ $navbar-background-color: $soapstone;
 $navbar-box-shadow-color: $seashell;
 $navbar-item-color: $rhino;
 $navbar-item-hover-color: $blue-marguerite;
-$navbar-item-active-color: $blue-marguerite;
+$navbar-item-active-color: $vermilion;
 $navbar-item-hover-background-color: transparent;
 
 //Menu overrides
 $menu-item-color: $primary;
 $menu-item-hover-color: $blue-marguerite !important;
 $menu-item-hover-background-color: transparent;
-$menu-item-active-color: $blue-marguerite;
+$menu-item-active-color: $vermilion;
 $menu-list-border-left: 1px solid $blue-marguerite;
 $menu-label-color: $blue-marguerite;
 
 body {
     background: $soapstone;
-    color: $mortar;
+    color: $shark;
     font-family: $primary-font !important;
     font-weight: 400;
     font-style: normal;
@@ -41,8 +40,18 @@ body {
     overflow: hidden;
 }
 
-// body, body a
-//   cursor: none
+.border {
+    border-left: 1px solid $vermilion;
+    border-right: 1px solid $vermilion;
+    left: 30px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 60px);
+    pointer-events: none;
+}
 
 p {
     font-size: 1.313em;
@@ -59,12 +68,6 @@ p {
             font-style: normal;
         }
     }
-
-    .is-active {
-        font-family: orpheuspro, serif;
-        font-weight: 400;
-        font-style: italic;
-    }
 }
 
 .navbar > .container {
@@ -73,7 +76,6 @@ p {
 
 #navMenu {
     font-size: 1.125em;
-    font-weight: 500 !important;
     font-family: orpheuspro, serif;
     font-weight: normal;
     letter-spacing: 2px;
@@ -109,8 +111,8 @@ p {
 
     .post-item {
         a {
-            border-top: 2px solid $primary;
-            color: $rhino;
+            border-top: 2px solid $shark;
+            color: $shark;
             display: grid;
             grid-template-columns: 200px 1fr auto;
             padding: 2em 0;
@@ -139,6 +141,30 @@ p {
         max-height: 30vh;
         transform: translate(50%, -50%);
     }
+}
+
+.full-width-image-container {
+    width: 100vw;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin: 2em -50vw;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width-image {
+    width: 100vw;
+    height: 400px;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-link {

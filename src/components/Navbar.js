@@ -67,7 +67,7 @@ const Navbar = class extends React.Component {
                                 activeClassName="is-active"
                                 to="/"
                             >
-                                Home
+                                Work
                             </Link>
                             <Link
                                 className="navbar-item"

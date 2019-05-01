@@ -118,6 +118,7 @@ const TemplateWrapper = ({ children }) => {
                     <div>{children}</div>
                 </div>
             </section>
+            <div className="border" />
         </div>
     );
 };
