@@ -11,6 +11,7 @@ tags:
   - green beans
   - flavor
   - tasting
+color: '#BF209F'
 previewImage:
   alt: latte art
   image: /img/flavor_wheel.jpg
