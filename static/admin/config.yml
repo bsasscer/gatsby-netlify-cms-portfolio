@@ -47,6 +47,7 @@ collections:
                 widget: 'hidden',
                 default: 'project-post',
             }
+          - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Client Name', name: 'clientName', widget: 'string' }
           - {
                 label: 'Client Occupation',
