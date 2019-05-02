@@ -9,6 +9,7 @@ category: Design
 tags:
   - flavor
   - tasting
+color: '#3E2268'
 previewImage:
   alt: coffee grounds
   image: /img/blog-index.jpg
