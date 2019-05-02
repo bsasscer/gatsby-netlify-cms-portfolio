@@ -10,6 +10,7 @@ category: Development
 tags:
   - brewing
   - chemex
+color: '#874AE2'
 previewImage:
   alt: pour-over coffee
   image: /img/jumbotron.jpg
