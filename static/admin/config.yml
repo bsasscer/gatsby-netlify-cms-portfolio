@@ -24,6 +24,7 @@ collections:
           - { label: 'Body', name: 'body', widget: 'markdown' }
           - { label: 'Category', name: 'category', widget: 'text' }
           - { label: 'Tags', name: 'tags', widget: 'list' }
+          - { label: 'Color', name: 'color', widget: 'string' }
           - {
                 label: 'Preview Image',
                 name: 'previewImage',
@@ -62,7 +63,7 @@ collections:
           - { label: 'Description', name: 'description', widget: 'text' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
           - { label: 'Tags', name: 'tags', widget: 'list' }
-          - { label: 'Circle', name: 'circle', widget: 'image' }
+          - { label: 'Color', name: 'color', widget: 'string' }
           - { label: Full_image, name: full_image, widget: image }
           - {
                 label: Testimonials,

@@ -15,7 +15,7 @@ $body-background-color: $soapstone;
 $primary: $rhino;
 $secondary-font: orpheuspro, serif;
 $primary-font: 'mabry-regular-pro', sans-serif;
-$navbar-background-color: $soapstone;
+$navbar-background-color: rgba(255, 250, 247, 0.97);
 $navbar-box-shadow-color: $seashell;
 $navbar-item-color: $rhino;
 $navbar-item-hover-color: $blue-marguerite;
@@ -37,7 +37,6 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
-    overflow: hidden;
 }
 
 .border {
@@ -51,6 +50,30 @@ body {
     z-index: 999;
     width: calc(100% - 60px);
     pointer-events: none;
+}
+
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+
+    span {
+        display: block;
+        position: absolute;
+        background-color: $vermilion;
+        left: 0;
+        height: 1px;
+        width: 100%;
+    }
+
+    span:nth-child(1) {
+        top: calc(3 * 30vh - 0.5px);
+    }
 }
 
 p {
@@ -104,43 +127,21 @@ p {
 }
 
 .post-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+    display: grid;
+    grid-template-columns: 300px 500px auto;
+    grid-gap: 20px;
+    max-width: 1250px;
     margin-top: 5em;
 
     .post-item {
-        a {
-            border-top: 2px solid $shark;
-            color: $shark;
-            display: grid;
-            grid-template-columns: 200px 1fr auto;
-            padding: 2em 0;
-
-            p {
-                z-index: 2;
-            }
-
-            &:hover {
-                color: $blue-marguerite;
-            }
+        .preview-image {
+            width: 100%;
         }
     }
-    .hover-item:hover .hover-item-show {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.5s;
-    }
+}
 
-    .hover-item-show {
-        position: absolute;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.5s;
-        z-index: 1;
-        max-height: 30vh;
-        transform: translate(50%, -50%);
-    }
+img {
+    z-index: 250 !important;
 }
 
 .full-width-image-container {

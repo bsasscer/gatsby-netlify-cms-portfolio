@@ -119,6 +119,9 @@ const TemplateWrapper = ({ children }) => {
                 </div>
             </section>
             <div className="border" />
+            <div className="grid-lines">
+                <span />
+            </div>
         </div>
     );
 };

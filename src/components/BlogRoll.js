@@ -12,23 +12,14 @@ class BlogRoll extends React.Component {
                 <div className="post-list">
                     {posts &&
                         posts.map(({ node: post }) => (
-                            <div className="hover-item post-item" key={post.id}>
+                            <div className="post-item" key={post.id}>
                                 <Link to={post.fields.slug}>
-                                    <div className="cell-left">
-                                        <p>{post.frontmatter.category}</p>
-                                    </div>
-                                    <div className="cell-middle">
-                                        <p>{post.frontmatter.title}</p>
-                                    </div>
-                                    <div className="cell-right">
-                                        <p>{post.frontmatter.date}</p>
-                                    </div>
                                     <img
                                         src={
                                             post.frontmatter.previewImage.image
                                                 .publicURL
                                         }
-                                        className="hover-item-show"
+                                        className="preview-image"
                                         alt={post.frontmatter.previewImage.alt}
                                     />
                                 </Link>
@@ -68,7 +59,7 @@ export default () => (
                             frontmatter {
                                 title
                                 templateKey
-                                date(formatString: "DD MMM YYYY")
+                                date(formatString: "MMM DD")
                                 category
                                 previewImage {
                                     alt

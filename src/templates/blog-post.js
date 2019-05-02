@@ -10,6 +10,7 @@ export const BlogPostTemplate = ({
     content,
     contentComponent,
     description,
+    date,
     tags,
     title,
     helmet
@@ -24,6 +25,7 @@ export const BlogPostTemplate = ({
                     <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                         {title}
                     </h1>
+                    <h1>{date}</h1>
                     <p>{description}</p>
                     <PostContent content={content} />
                     {tags && tags.length ? (
@@ -74,6 +76,7 @@ const BlogPost = ({ data }) => {
                 }
                 tags={post.frontmatter.tags}
                 title={post.frontmatter.title}
+                date={post.frontmatter.date}
             />
         </Layout>
     );
@@ -93,7 +96,7 @@ export const pageQuery = graphql`
             id
             html
             frontmatter {
-                date(formatString: "DD MMM YYYY")
+                date(formatString: "MMM DD YYYY")
                 title
                 description
                 tags
