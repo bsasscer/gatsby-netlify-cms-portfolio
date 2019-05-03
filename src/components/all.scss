@@ -1,6 +1,3 @@
-@import url('https://use.typekit.net/pzt3kof.css');
-@import url('../fonts/fonts.scss');
-
 // Config vars
 $soapstone: #fffaf7;
 $seashell: #fef4eb;
@@ -134,8 +131,25 @@ p {
     margin-top: 5em;
 
     .post-item {
-        .preview-image {
+        .image-con {
+            position: relative;
+        }
+
+        &:hover {
+            .preview-image {
+                transform: translate(20px, 20px);
+            }
+        }
+
+        .image-con > .image-bg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
             width: 100%;
+            height: 100%;
+            contain: strict;
+            opacity: 0;
+            transition: transform 0.8s;
         }
     }
 }

@@ -2,9 +2,9 @@ var proxy = require('http-proxy-middleware');
 
 module.exports = {
     siteMetadata: {
-        title: 'Bianca Sasscer | Designer and Web Developer for hire',
+        title: 'Joe Somebody | Designer and Web Developer for hire',
         description:
-            'Bianca Sasscer is a designer and front end developer for hire in San Diego, CA.'
+            'Joe Somebody is a designer and art director from Nova Scotia'
     },
     plugins: [
         'gatsby-plugin-react-helmet',

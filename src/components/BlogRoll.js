@@ -12,16 +12,36 @@ class BlogRoll extends React.Component {
                 <div className="post-list">
                     {posts &&
                         posts.map(({ node: post }) => (
-                            <div className="post-item" key={post.id}>
-                                <Link to={post.fields.slug}>
-                                    <img
-                                        src={
-                                            post.frontmatter.previewImage.image
-                                                .publicURL
-                                        }
-                                        className="preview-image"
-                                        alt={post.frontmatter.previewImage.alt}
-                                    />
+                            <div className="post-item reveal">
+                                <Link
+                                    to={post.fields.slug}
+                                    className="inner"
+                                    key={post.id}
+                                >
+                                    <div className="image-con">
+                                        <div
+                                            className="image-bg"
+                                            style={{
+                                                backgroundColor: `${
+                                                    post.frontmatter.color
+                                                }`
+                                            }}
+                                        />
+                                        <div
+                                            className="preview-image"
+                                            style={{
+                                                backgroundImage: `url(${
+                                                    post.frontmatter
+                                                        .previewImage.image
+                                                        .publicURL
+                                                })`,
+                                                backgroundSize: `cover`,
+                                                backgroundPosition: `50% 50%`,
+                                                backgroundRepeat: `no-repeat`,
+                                                minHeight: `300px`
+                                            }}
+                                        />
+                                    </div>
                                 </Link>
                             </div>
                         ))}
@@ -61,6 +81,7 @@ export default () => (
                                 templateKey
                                 date(formatString: "MMM DD")
                                 category
+                                color
                                 previewImage {
                                     alt
                                     image {
